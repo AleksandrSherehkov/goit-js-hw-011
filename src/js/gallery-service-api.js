@@ -35,9 +35,6 @@ export class GaleryApiService {
     this.addPage();
 
     return data;
-
-    // .then(response => response.data.hits)
-    // .catch(error => console.log(error));
   }
 
   setTotalHits(newTotalHits) {
@@ -83,12 +80,4 @@ export class GaleryApiService {
 
     this.searchQuery = newSearchQuery;
   }
-
-  // get totalHits() {
-  //   return this.totalHits;
-  // }
-
-  // set totalHits(newTotalHits) {
-  //   this.totalHits = newTotalHits;
-  // }
 }

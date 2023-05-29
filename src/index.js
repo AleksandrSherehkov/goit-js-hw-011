@@ -20,12 +20,13 @@ const handleQueryApi = async () => {
     }
     Loading.circle('Loading...');
     data = await galeryApiService.getRequest();
-
+    console.log(data);
     appendGalleryMarkup(data);
+
     Loading.remove();
 
     gallery.refresh();
-    checkRestHits();
+    checkResetHits();
   } catch (error) {
     Loading.remove();
     //isBtnHide();
@@ -51,7 +52,7 @@ const onFormSubmit = async e => {
   // }
 };
 
-const checkRestHits = () => {
+const checkResetHits = () => {
   if (galeryApiService.totalHits === 0) {
     return;
   }
@@ -104,7 +105,6 @@ const onEntry = async entries => {
   entries.forEach(async entry => {
     if (entry.isIntersecting) {
       await handleQueryApi();
-      console.log('pora gruzit foto');
     }
   });
 };
