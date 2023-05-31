@@ -28,7 +28,7 @@ export class GaleryApiService {
 
     const response = await axios.get(url, options);
     const data = await response.data.hits;
-    console.log(data);
+
     this.checksForSerchResponse(data);
 
     this.setTotalHits(response.data.totalHits);
@@ -58,8 +58,6 @@ export class GaleryApiService {
         fontSize: '16px',
       });
     }
-
-    return;
   }
 
   addHits(data) {

@@ -6,12 +6,12 @@ import { GaleryApiService } from './js/gallery-service-api';
 import { refs } from './js/refs';
 import galleryMarkup from './templates/gallery-card.hbs';
 
+const galeryApiService = new GaleryApiService();
 let gallery = new SimpleLightbox('.gallery a', {
   captions: true,
   captionsData: 'alt',
   captionDelay: 250,
 });
-const galeryApiService = new GaleryApiService();
 
 const handleQueryApi = async () => {
   try {
@@ -20,9 +20,7 @@ const handleQueryApi = async () => {
     }
     Loading.circle('Loading...');
     data = await galeryApiService.getRequest();
-    console.log(data);
     appendGalleryMarkup(data);
-
     Loading.remove();
 
     gallery.refresh();
