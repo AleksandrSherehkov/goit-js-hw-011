@@ -20,6 +20,7 @@ const handleQueryApi = async () => {
     }
     Loading.circle('Loading...');
     data = await galeryApiService.getRequest();
+    console.log(data);
     appendGalleryMarkup(data);
     Loading.remove();
 
