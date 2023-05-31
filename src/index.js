@@ -20,8 +20,8 @@ const handleQueryApi = async () => {
     }
     Loading.circle('Loading...');
     const data = await galeryApiService.getRequest();
-    console.log(data);
     appendGalleryMarkup(data);
+    scrollPage();
     Loading.remove();
 
     gallery.refresh();
@@ -77,10 +77,10 @@ const clearGallery = () => {
 //   refs.loadMoreBtn.classList.remove('is-hidden');
 // };
 
-const onLoadMoreImage = async () => {
-  await handleQueryApi();
-  scrollPage();
-};
+// const onLoadMoreImage = async () => {
+//   await handleQueryApi();
+//   scrollPage();
+// };
 
 const scrollPage = () => {
   const { height: cardHeight } = document
